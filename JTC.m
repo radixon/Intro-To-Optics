@@ -1,0 +1,9 @@
+f = input;
+f = im2double(f);
+g = reference;
+g = im2double(g);
+s = [f f*0; g*0 g];
+S = fft2(s);
+S2 = S.*conj(S);
+corr = ifft2(S2);
+ccd = corr.*conj(corr);
